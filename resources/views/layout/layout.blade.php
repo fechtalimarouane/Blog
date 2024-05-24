@@ -8,7 +8,7 @@
     </style>
   </head>
   <body>
-	<nav class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+  <nav class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 fixed top-0 w-full z-50">
     <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="text-white font-semibold text-lg">
             My Awesome Blog
@@ -20,15 +20,31 @@
             <li>
                 <a href="/blog" class="text-gray-300 hover:text-white">Blog</a>
             </li>
+            @auth
+            <li>
+                <a href="/blog/myposts" class="text-gray-300 hover:text-white">Profile</a>
+            </li>
+            <li>
+                <a href="/logout" class="text-gray-300 hover:text-white">Logout</a>
+            </li>
+            <li>
+                <div class="text-yellow-500 ">{{auth()->user()->name}}</div>
+            </li>
+            @endauth
+            @guest
             <li>
                 <a href="/login" class="text-gray-300 hover:text-white">Login</a>
             </li>
+            @endguest
+          
         </ul>
     </div>
 </nav>
 
-
-      @yield('content')
+<div class="my-20">
+  @yield('content')
+</div>
+     
 
 
 
@@ -58,16 +74,16 @@
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
             <ul class="list-unstyled">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >About Us</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >Blog</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >Github</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >Free Products</a>
               </li>
             </ul>
           </div>
@@ -75,16 +91,16 @@
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other Resources</span>
             <ul class="list-unstyled">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >MIT License</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >Terms &amp; Conditions</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >Privacy Policy</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" >Contact Us</a>
               </li>
             </ul>
           </div>
@@ -95,13 +111,14 @@
     <div class="flex flex-wrap items-center md:justify-between justify-center">
       <div class="w-full md:w-4/12 px-4 mx-auto text-center">
         <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Copyright © <span id="get-current-year">2021</span><a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank"> Notus JS by
+          Copyright © <span id="get-current-year">2024</span><a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank"> Notus by
           <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">Creative Tim</a>.
         </div>
       </div>
     </div>
   </div>
 </footer>
+
 <script src="https://cdn.tailwindcss.com"></script>
 
   </body>

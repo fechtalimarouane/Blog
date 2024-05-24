@@ -11,21 +11,21 @@
 				<label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
 				<input type="text" id="name" name="name" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your name" >
 			@error('name')
-				<div class="text-red"> {{ $message }} </div>
+				<div class="text-red-500"> {{ $message }} </div>
 			@enderror
 			</div>
 			<div class="mb-4">
 				<label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">email</label>
 				<input type="email" id="email" name="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your email" >
 			@error('email')
-				<div class="text-red"> {{ $message }} </div>
+				<div class="text-red-500"> {{ $message }} </div>
 			@enderror
 			</div>
 			<div class="mb-4">
 				<label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">password</label>
 				<input type="password" name="password" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" >
 			@error('password')
-				<div class="text-red"> {{ $message }} </div>
+				<div class="text-red-500"> {{ $message }} </div>
 			@enderror
 			</div>
 
@@ -34,7 +34,7 @@
 				<label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">confirmed password</label>
 				<input type="password" name="password_confirmation" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" >
 			@error('password')
-				<div class="text-red"> {{ $message }} </div>
+				<div class="text-red-500"> {{ $message }} </div>
 			@enderror	
 			</div>
 		
